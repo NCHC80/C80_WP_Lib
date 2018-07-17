@@ -1,0 +1,76 @@
+	/* General *****************/
+	.elkraft-svg .bg { fill: none; }
+	
+	.elkraft-svg.r0 { -ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+	.elkraft-svg.r45 { -ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+	.elkraft-svg.r90 { -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); }
+	.elkraft-svg.r135 { -ms-transform: rotate(135deg); -webkit-transform: rotate(135deg); transform: rotate(135deg); }
+	.elkraft-svg.r180 { -ms-transform: rotate(180deg); -webkit-transform: rotate(180deg); transform: rotate(180deg); }
+	.elkraft-svg.r225 { -ms-transform: rotate(225deg); -webkit-transform: rotate(225deg); transform: rotate(225deg); }
+	.elkraft-svg.r270 { -ms-transform: rotate(270deg); -webkit-transform: rotate(270deg); transform: rotate(270deg); }	
+	.elkraft-svg.r315 { -ms-transform: rotate(315deg); -webkit-transform: rotate(315deg); transform: rotate(315deg); }	
+	
+	.elkraft-svg.off .ind { fill: #dedede; }
+	.elkraft-svg.off .ind_al { fill: #dedede; }
+	.elkraft-svg.off .ind_on { fill: #dedede; }
+
+	.elkraft-svg.on .ind { fill: #00ff00; }
+	.elkraft-svg.on .ind_al { fill: #dedede; }
+	.elkraft-svg.on .ind_on { fill: #00ff00; }
+
+	.elkraft-svg.fault .ind { fill: #ffff00; }
+	.elkraft-svg.fault .ind_al { fill: #ffff00; }
+
+	.elkraft-svg.al .ind { fill: #ff0000; }
+	.elkraft-svg.al .ind_al { fill: #ff0000; }
+	
+	.elkraft-svg .lager { visibility: hidden; }
+	.elkraft-svg.l1 #L1 { visibility: visible; }
+	.elkraft-svg.l2 #L2 { visibility: visible; }
+	.elkraft-svg.l3 #L3 { visibility: visible; }
+	.elkraft-svg.l4 #L4 { visibility: visible; }
+	.elkraft-svg.l5 #L5 { visibility: visible; }
+	.elkraft-svg.l6 #L6 { visibility: visible; }
+	.elkraft-svg.l7 #L7 { visibility: visible; }
+	.elkraft-svg.l8 #L8 { visibility: visible; }
+	.elkraft-svg.l9 #L9 { visibility: visible; }
+	.elkraft-svg.l10 #L10 { visibility: visible; }
+
+
+	@-moz-keyframes moz-alarm {
+		0%        {fill: #ffffff}
+		100%       {fill: #ff0000}
+	}
+	@-webkit-keyframes webkit-alarm {
+		0%        {fill: #ffffff}
+		100%       {fill: #ff0000}
+	}
+	@keyframes alarm {
+		0%        {fill: #ffffff}
+		100%       {fill: #ff0000}
+	}
+
+	.elkraft-svg.al .ind {
+		-moz-animation   : moz-alarm 2.5s ease infinite; /* Older versions of Mozila */
+		-webkit-animation: webkit-alarm 2.5s ease infinite; /* Chrome, Opera, Safari */
+		animation: alarm 2.5s ease infinite;
+	}
+	
+	.elkraft-svg.al .ind_al {
+		-moz-animation   : moz-alarm 2.5s ease infinite; /* Older versions of Mozila */
+		-webkit-animation: webkit-alarm 2.5s ease infinite; /* Chrome, Opera, Safari */
+		animation: alarm 2.5s ease infinite;
+	}
+	
+	/* BrytareKassett *****************/
+
+	/* BrytareKassett *****************/
+
+	/* Lastfrånskiljare *****************/
+	
+	/* Valfrånskiljare *****************/
+
+	/* Jordningskopplare *****************/
+	
+	/* Generator *****************/
+

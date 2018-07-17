@@ -1,0 +1,269 @@
+<html>
+<head>
+<script type="text/javascript" src="/javascripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/javascripts/d3.min.js"></script>
+</head>
+<script type="text/javascript">
+
+
+	  var olddataset = [];
+	  var Tags = new Array();
+
+	  //Size from WebPort
+	  pw = $(window).width();
+	  ph = $(window).height();
+		
+	  $(document).ready(function () {
+ 	  	readTags();
+	  });
+	  
+	  function readTags()
+		{
+			var str = "<%=TAGS%>";
+			Tags = str.split(',');
+			if(Tags.length == 0)
+				Tags = Tags.push(str);
+			
+			var url = "/tag/read?ts=" + new Date().getTime().toString();
+			
+			for(i=0;i<Tags.length;i++){
+				url += "&tag=" + Tags[i];
+			}
+
+			$.getJSON(url, {})
+					.done(function(data) {		
+							
+							var dataSet = [];
+							
+							if(Tags.length==1){
+								dataSet.push({"legendLabel":Tags, "magnitude":data});
+							}else{
+								$.each( data, function( key, value ) {
+								  dataSet.push({"legendLabel":key, "magnitude":value});
+								});						
+							}
+							
+							if(JSON.stringify(dataSet) != JSON.stringify(olddataset)){
+								updatePie(dataSet, 10, (pw-190)/2, 20);
+								olddataset = dataSet;
+							}
+						  
+							setTimeout(readTags, 5000);
+			})
+						.fail(function() {
+							return 0;
+			});
+		}
+	  
+	  
+    function updatePie( dataSet, margin, outerRadius, innerRadius ) {
+
+		//Empty the element that contains old chart.
+		var htmlelement = "#wp_pie_chart";
+		$(htmlelement).empty();
+		
+		//Name of your pie chart
+		var nameOfPie = "WebportPie";
+		
+		//Sets the selected color scheme
+		var colorScale =  d3.scale.category20();
+		console.log("<%=COLORSCHEME%>");
+		switch("<%=COLORSCHEME%>") {
+			case "category10":
+				console.log("1111");
+				colorScale = d3.scale.category10();
+				break;
+			case "category20":
+				console.log("2222");
+				colorScale = d3.scale.category20();
+				break;
+			case "category20b":
+				console.log("3333");
+				colorScale = d3.scale.category20b();
+				break;
+			case "category20c":
+				console.log("4444");
+				colorScale = d3.scale.category20c();
+				break;
+		}
+					
+		//Variables to possition different elements
+     	var canWidth = pw;
+		var pieWidthTot = outerRadius;
+		var pieCentX = outerRadius + margin/2;
+		var pieCentY = outerRadius + margin/2;
+		var BulletOffset = 30;
+        var TextOffset = 10;
+        var textVertSpace = 20;
+		var canHeight = ph;
+        var pieDrivenHeight = outerRadius*2 + margin*2;
+		var VertOffset = (outerRadius - margin)-((pieDrivenHeight/2)-((dataSet.length)*12));
+        var TextDrivenHeight = (dataSet.length * textVertSpace) + margin*2;
+		
+		//Adjust the pie height
+		if (pieDrivenHeight >= TextDrivenHeight)
+		{ canHeight = pieDrivenHeight;}
+		else
+		{ canHeight = TextDrivenHeight;	}
+		
+        var x = d3.scale.linear().domain([0, d3.max(dataSet, function(d) { return d.magnitude; })]).rangeRound([0, pieWidthTot]);
+        var y = d3.scale.linear().domain([0, dataSet.length]).range([0, (dataSet.length * 20)]);
+
+        var synchronizedMouseOver = function() {
+        var arc = d3.select(this);
+        var indexValue = arc.attr("index_value");
+
+        var arcSelector = "." + "pie-" + nameOfPie + "-arc-" + indexValue;
+        var selectedArc = d3.selectAll(arcSelector);
+        selectedArc.style("fill", "#3E3E3E");
+
+        var bulletSelector = "." + "pie-" + nameOfPie + "-legendBullet-" + indexValue;
+        var selectedLegendBullet = d3.selectAll(bulletSelector);
+        selectedLegendBullet.style("fill", "#3E3E3E");
+       
+		var textSelector = "." + "pie-" + nameOfPie + "-legendText-" + indexValue;
+        var selectedLegendText = d3.selectAll(textSelector);
+        selectedLegendText.style("fill", "#3E3E3E");
+        };
+
+        var synchronizedMouseOut = function() {
+          var arc = d3.select(this);
+          var indexValue = arc.attr("index_value");
+
+          var arcSelector = "." + "pie-" + nameOfPie + "-arc-" + indexValue;
+          var selectedArc = d3.selectAll(arcSelector);
+          var colorValue = selectedArc.attr("color_value");
+          selectedArc.style("fill", colorValue);
+
+          var bulletSelector = "." + "pie-" + nameOfPie + "-legendBullet-" + indexValue;
+          var selectedLegendBullet = d3.selectAll(bulletSelector);
+          var colorValue = selectedLegendBullet.attr("color_value");
+          selectedLegendBullet.style("fill", colorValue);
+
+          var textSelector = "." + "pie-" + nameOfPie + "-legendText-" + indexValue;
+          var selectedLegendText = d3.selectAll(textSelector);
+          selectedLegendText.style("fill", "#3E3E3E");
+        };
+
+        var tweenPie = function (b) {
+          b.innerRadius = 0;
+          var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
+          return function(t) {
+            return arc(i(t));
+          };
+        }
+		
+        //DRAW THE CANVAS
+        var canvas = d3.select(htmlelement)
+            .append("svg:svg") //ADD SVG ELEMENT
+            .data([dataSet]) //ADD DATASET TO SVG
+            .attr("width", canWidth) //SET WIDTH OF CANVAS
+            .attr("height", canHeight) //SET HEIGHT OF CANVAS
+            .append("svg:g") //MAKE A GROUP
+            .attr("transform", "translate(" + pieCentX + "," + pieCentY + ")") //SET THE CENTER OF THE PIE CHART
+
+		//CREATE ARC OBJECT
+        var arc = d3.svg.arc()
+            .innerRadius(innerRadius)
+            .outerRadius(outerRadius);
+
+		//SET A PIE LAYOUT
+        var pie = d3.layout.pie()
+	    .value(function(d) { return d.magnitude; });
+	 
+
+        //SELECT GROUP ELEMENTS WITH CLASS g.SLICE
+        var arcs = canvas.selectAll("g.slice")
+        .data(pie)
+	    .enter().append("svg:a")
+        .append("svg:g")
+              .attr("class", "slice")
+              .style("stroke", "White" )
+              .attr("d", arc);
+
+		
+		//SET COLOR OF SLICES
+        //CREATE SVG PATH USING ASSOCIATED DATA
+        arcs.append("svg:path")
+          .attr("fill", function(d, i) { return colorScale(i); } )
+          .attr("color_value", function(d, i) { return colorScale(i); })
+          .attr("index_value", function(d, i) { return "index-" + i; })
+          .attr("class", function(d, i) { return "pie-" + nameOfPie + "-arc-index-" + i; })
+          .style("stroke", "White" )
+          .attr("d", arc)
+          .on('mouseover', synchronizedMouseOver)
+          .on("mouseout", synchronizedMouseOut)
+          .transition()
+            .ease("ease-in")
+            .duration(0)
+            .delay(function(d, i) { return i * 50; })
+            .attrTween("d", tweenPie);
+
+       
+        arcs.filter(function(d) { return d.endAngle - d.startAngle > .2; }).append("svg:text")
+          .attr("dy", ".35em")
+          .attr("text-anchor", "middle")
+          .attr("transform", function(d) { 
+            d.outerRadius = outerRadius;
+            d.innerRadius = innerRadius;
+            return "translate(" + arc.centroid(d) + ")rotate(" + angle(d) + ")";
+          })
+          .style("fill", "White")
+          .style("font", "normal 12px Arial")
+          .text(function(d) { return d.data.magnitude; });
+
+        //CALC ANGEL OF AN ARC RAD to DEgree
+        function angle(d) {
+          var a = (d.startAngle + d.endAngle) * 90 / Math.PI - 90;
+          return a > 90 ? a - 180 : a;
+        }
+
+        //ADD BULLET POINTS
+        canvas.selectAll("circle")
+          .data(dataSet).enter().append("svg:circle")
+          .attr("cx", pieWidthTot + BulletOffset)
+          .attr("cy", function(d, i) { return i*textVertSpace - VertOffset; } )
+          .attr("stroke-width", ".5")
+          .style("fill", function(d, i) { return colorScale(i); })
+          .attr("r", 5)
+          .attr("color_value", function(d, i) { return colorScale(i); })
+          .attr("index_value", function(d, i) { return "index-" + i; })
+          .attr("class", function(d, i) { return "pie-" + nameOfPie + "-legendBullet-index-" + i; })
+          .on('mouseover', synchronizedMouseOver)
+          .on("mouseout", synchronizedMouseOut);
+
+        //CREATE TEXT AT BULLETPOINT
+        canvas.selectAll("a.legend_link")
+          .data(dataSet)
+          .enter().append("svg:a") 
+            .append("text")
+              .attr("text-anchor", "center")
+              .attr("x", pieWidthTot + BulletOffset + TextOffset)
+
+              .attr("y", function(d, i) { return i*textVertSpace - VertOffset; } )
+              .attr("dx", 0)
+              .attr("dy", "4px") // PADDING TO ALIGN TEXT WITH BULLETS
+              .text(function(d) { return d.legendLabel;})
+              .attr("color_value", function(d, i) { return colorScale(i); })
+              .attr("index_value", function(d, i) { return "index-" + i; })
+              .attr("class", function(d, i) { return "pie-" + nameOfPie + "-legendText-index-" + i; })
+              .style("fill", "#3E3E3E")
+              .style("font", "bold 12px Calibri")
+              .on('mouseover', synchronizedMouseOver)
+              .on("mouseout", synchronizedMouseOut);
+
+    
+	};
+	  
+    </script>
+<style type="text/css">
+svg {
+	font: 10px sans-serif;
+	display: block;
+}
+</style>
+</head>
+<body>
+<div id="wp_pie_chart"></div>
+</body>
+</html>

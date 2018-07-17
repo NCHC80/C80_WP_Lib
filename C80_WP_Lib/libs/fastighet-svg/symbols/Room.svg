@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+
+  <path class="ind" fill="#DDDDDC" d="M2.8,1h14.3c1,0,1.8,0.8,1.8,1.8v14.3c0,1-0.8,1.8-1.8,1.8H2.8c-1,0-1.8-0.8-1.8-1.8V2.8C1,1.8,1.8,1,2.8,1z"/>
+  
+  <path stroke="#8E8E8E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M2.8,1h14.3c1,0,1.8,0.8,1.8,1.8v14.3	c0,1-0.8,1.8-1.8,1.8H2.8c-1,0-1.8-0.8-1.8-1.8V2.8C1,1.8,1.8,1,2.8,1z"/>
+  
+  <path class="ind_heat" stroke="#757575" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M10,4.9l0,10.2"/>
+  <path class="ind_cool" stroke="#757575" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M5,10l9.9,0"/>
+  
+</svg>

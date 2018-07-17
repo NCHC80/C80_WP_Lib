@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21.4" height="21.4">
+
+  <path class="ind_al" fill="#DDDDDC" d="M10.7,0.8c-5.5,0-9.9,4.4-9.9,9.9s4.4,9.9,9.9,9.9c5.5,0,9.9-4.4,9.9-9.9S16.2,0.8,10.7,0.8"/>
+  <path class="ind_on" fill="#DDDDDC" d="M11,15.9V5.7l8.3,5L11,15.9z"/>
+  
+  <path stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M11.5,15.9V5.7l8.3,5L11.5,15.9z"/>
+  <path stroke="#8E8E8E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M10.7,0.8c-5.5,0-9.9,4.4-9.9,9.9s4.4,9.9,9.9,9.9	c5.5,0,9.9-4.4,9.9-9.9S16.2,0.8,10.7,0.8"/>
+  
+</svg>

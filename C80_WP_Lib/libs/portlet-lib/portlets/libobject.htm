@@ -1,0 +1,70 @@
+<html>
+<head>
+<script type="text/javascript" src="/javascripts/jquery-1.9.1.min.js"></script>
+<script>
+	var loid = '<%= OBJECT%>';
+	var prefix = '<%= PREFIX%>';
+
+	Init();
+	
+    $(document).ready(function () {
+		RefreshObject(true);
+	});
+
+	function Init() {
+		$.get('/lib/getjspath?loid=' + loid, function (data) {
+			if (data != '') {
+				var script = document.createElement('script');
+				script.setAttribute('type', 'text/javascript');
+				script.setAttribute('src', data);
+				document.getElementsByTagName('head')[0].appendChild(script);
+			}
+		});
+		$.get('/lib/getcsspath?loid=' + loid, function (data) {
+			if (data != '') {
+				var link = document.createElement('link');
+				link.setAttribute('rel', 'stylesheet');
+				link.setAttribute('type', 'text/css');
+				link.setAttribute('href', data);
+				document.getElementsByTagName('head')[0].appendChild(link);
+			}
+		});
+	}
+	
+	function RefreshObject(init) {
+		var url = '/lib/getactiveimage?loid=' + loid + '&prefix=' + prefix + '&rotate=0' + '&id=libobject_img';
+		if (init)
+			url += '&enc=1';
+			
+		$.get(url, function (data) {
+			if (init)
+			{
+				$('#libobject').html(data);
+			}
+			else
+			{
+				if (data.indexOf('svg:') == 0) {
+					$('#libobject_img').attr("class", data.substring(4));
+				} else if (data != '' && data != '-' && $('#libobject_img').attr("src") != data) {
+					$('#libobject_img').attr("src", data);
+					$('#libobject_img').css({visibility: "visible"});;
+				} else if (data == '') {
+					$('#libobject_img').attr("src", "");
+					$('#libobject_img').css({visibility: "hidden"});;
+				}
+			}
+		}).always(function() {
+			setTimeout(function() {
+				RefreshObject(false);
+				}, 1000);
+		});
+	}
+</script>
+</head>
+<style>
+	body { margin: 0px; padding: 0px; }
+</style>
+<body>
+	<div id="libobject" data-prefix="<%= PREFIX%>" class="komponent" style="position:absolute;left:<%= POSX%>px;top:<%= POSY%>px;cursor:default;"></div>
+</body>
+</html>

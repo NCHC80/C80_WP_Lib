@@ -1,0 +1,87 @@
+<html>
+<head>
+<script type="text/javascript" src="/javascripts/jquery-1.9.1.min.js"></script>
+<script>
+	var url = location.protocol + "//" + location.host + "/trend/main?type=manual&fullscreen=1";
+	var dtto = new Date();
+	var dtfrom = new Date();
+	var sdtfrom = "";
+	var sdtto = "";
+	var timespan = "<%=TIMESPAN%>";
+	var title = "<%=TITLE%>";
+	var tags = "<%=TAGS%>";
+	var tarr = tags.split(",");
+
+	switch (timespan)
+	{
+		case "1H":
+			dtfrom.setHours(dtto.getHours() - 1);
+			break;
+		case "1D":
+			dtfrom.setDate(dtto.getDate() - 1);
+			break;
+		case "1W":
+			dtfrom.setDate(dtto.getDate() - 7);
+			break;
+		case "1M":
+			dtfrom.setMonth(dtto.getMonth() - 1);
+			break;
+		case "1Q":
+			dtfrom.setMonth(dtto.getMonth() - 3);
+			break;
+		case "1Y":
+			dtfrom.setFullYear(dtto.getFullYear() - 1);
+			break;
+		case "PH":
+			dtto.setMinutes(0,0,0);
+			dtto.setHours(dtto.getHours() - 1);
+			dtfrom.setHours(dtto.getHours() - 1);
+			break;
+		case "PD":
+			dtto.setHours(0);
+			dtto.setDate(dtto.getDate() - 1);
+			dtfrom.setDate(dtto.getDate() - 1);
+			break;
+		case "PW":
+			dtto.setDate(dtto.getDate() + 1);
+			dtto.setDate(dtto.getDate() - dtto.getDay());
+			dtfrom.setDate(dtto.getDate() - 7);
+			break;
+		case "PM":
+			dtto.setHours(0);
+			dtto.setDate(0);
+			dtto.setMonth(dtto.getMonth() - 1);
+			dtfrom.setMonth(dtto.getMonth() - 1);
+			break;
+		case "PQ":
+			dtto.setHours(0);
+			dtto.setDate(0);
+			dtto.setMonth(dtto.getMonth() - 3);
+			dtfrom.setMonth(dtto.getMonth() - 3);
+			break;
+		case "PY":
+			dtto.setHours(0);
+			dtto.setDate(0);
+			dtto.setFullYear(dtto.getFullYear() - 1);
+			dtfrom.setFullYear(dtto.getFullYear() - 1);
+			break;
+	}
+	sdtfrom = dtfrom.toLocaleDateString() + " " + dtfrom.toLocaleTimeString();
+	sdtto = dtto.toLocaleDateString() + " " + dtto.toLocaleTimeString();
+	
+	url += "&view=<%=VIEW%>&from=" + sdtfrom + "&to=" + sdtto + "&title=" + title;
+
+	$.each(tarr, function (index, value) {
+		url += "&tags=" + value;
+	});
+	
+	location.href = url;
+
+	</script>
+</head>
+<style>
+	body { margin: 0px; padding: 0px; }
+</style>
+<body>
+</body>
+</html>

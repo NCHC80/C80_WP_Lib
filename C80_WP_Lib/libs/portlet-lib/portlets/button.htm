@@ -1,0 +1,129 @@
+<html>
+<head>
+	<script type="text/javascript" src="/javascripts/jquery-1.9.1.min.js"></script>
+	
+	<style>
+	
+	
+		body { margin: 0px; padding: 0px; }
+		
+		.btn {
+	-moz-box-shadow: 0px 10px 14px -7px #3e7327;
+ 	-webkit-box-shadow: 0px 10px 14px -7px #3e7327;
+ 	box-shadow: 0px 10px 14px -7px #3e7327;
+ 	background: -webkit-linear-gradient(top,#75d9ae,#46a67b);
+	background: -moz-linear-gradient(top,#75d9ae,#46a67b);
+	background: -ms-linear-gradient(top,#75d9ae,#46a67b);
+	background: -o-linear-gradient(top,#75d9ae,#46a67b);
+	background: linear-gradient(to bottom,#75d9ae,#46a67b);	
+ 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77b55a', endColorstr='#72b352',GradientType=0);
+ 	background-color:#77b55a;
+ 	-moz-border-radius:4px;
+ 	-webkit-border-radius:4px;
+ 	border-radius:4px;
+ 	border:1px solid #46a67b;
+ 	display:inline-block;
+ 	cursor:pointer; 
+	color:#ffffff;
+ 	font-family:Arial;
+ 	font-size:13px;
+ 	font-weight:bold;
+ 	padding:6.5px 13px;
+ 	text-decoration:none;
+ 	text-shadow:0px 1px 0px #5b8a3c;
+		}
+		
+		
+	</style>
+	
+	<script>
+		
+		$(document).ready(function () {
+			
+			var color_btn = "<%=BUTTON_COLOR%>"
+			var color_text = "<%=BUTTON_TEXT_COLOR%>"
+			var btn_size = "<%=BUTTON_SIZE%>"
+
+			switch (btn_size) {
+				case "Small":
+						$(".btn").css('padding','7px 13px');
+						$(".btn").css('font-size','13px');
+					break;		
+				case "Big":
+						$(".btn").css('padding','7px 13px');
+						$(".btn").css('font-size','13px');
+					break;
+			}
+			
+			switch (color_text) {
+				case "Vit":
+						$(".btn").css('color','#FFF');
+					break;		
+				case "Svart":
+						$(".btn").css('color','#000');
+					break;
+			}
+			
+			switch (color_btn) {
+				case "Grön":
+
+					$(".btn").css('background', '-webkit-linear-gradient(top,#75d9ae,#46a67b)');
+					$(".btn").css('background', '-moz-linear-gradient(top,#75d9ae,#46a67b)');
+					$(".btn").css('background', '-ms-linear-gradient(top,#75d9ae,#46a67b)');
+					$(".btn").css('background', '-o-linear-gradient(top,#75d9ae,#46a67b)');
+					$(".btn").css('background', 'linear-gradient(to bottom,#75d9ae,#46a67b)');
+					break;
+
+				case "Röd":
+					
+					$(".btn").css('background', '-webkit-linear-gradient(top,#d94848,#b80d0d)');
+					$(".btn").css('background', '-moz-linear-gradient(top,#d94848,#b80d0d)');
+					$(".btn").css('background', '-ms-linear-gradient(top,#d94848,#b80d0d)');
+					$(".btn").css('background', '-o-linear-gradient(top,#d94848,#b80d0d)');
+					$(".btn").css('background', 'linear-gradient(to bottom,#d94848,#b80d0d)');
+
+					break;
+					
+				case "Orange":
+					
+					$(".btn").css('background', '-webkit-linear-gradient(top,#f5b76c,#d68e37)');
+					$(".btn").css('background', '-moz-linear-gradient(top,#f5b76c,#d68e37)');
+					$(".btn").css('background', '-ms-linear-gradient(top,#f5b76c,#d68e37)');
+					$(".btn").css('background', '-o-linear-gradient(top,#f5b76c,#d68e37)');
+					$(".btn").css('background', 'linear-gradient(to bottom,#f5b76c,#d68e37)');
+
+					break;
+					
+				case "Blå":
+					
+					$(".btn").css('background', '-webkit-linear-gradient(top,#61a0e0,#4187cf)');
+					$(".btn").css('background', '-moz-linear-gradient(top,#61a0e0,#4187cf)');
+					$(".btn").css('background', '-ms-linear-gradient(top,#61a0e0,#4187cf)');
+					$(".btn").css('background', '-o-linear-gradient(top,#61a0e0,#4187cf)');
+					$(".btn").css('background', 'linear-gradient(to bottom,#61a0e0,#4187cf)');
+
+					break;
+					
+				case "Grå":
+					
+					$(".btn").css('background', '-webkit-linear-gradient(top,#9f9f9f,#777777)');
+					$(".btn").css('background', '-moz-linear-gradient(top,#9f9f9f,#777777)');
+					$(".btn").css('background', '-ms-linear-gradient(top,#9f9f9f,#777777)');
+					$(".btn").css('background', '-o-linear-gradient(top,#9f9f9f,#777777)');
+					$(".btn").css('background', 'linear-gradient(to bottom,#9f9f9f,#777777)');
+
+					break;
+			}
+		});
+	</script>
+	
+	
+	
+
+</head>
+
+<body>
+
+<a class="btn" target="_blank" href="<%=URL%>"><%=URL_TEXT%></a>
+</body>
+</html>

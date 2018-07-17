@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+  
+  <path class="ind" fill="#DDDDDC" d="M9.5,6.5C4.9,6.5,1,10.3,1,14.9c0,4.7,3.9,8.5,8.5,8.5s8.3-3.7,8.3-8.5C17.8,10.3,14.1,6.5,9.5,6.5"/>
+ 
+  <path stroke="#8E8E8E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M14,7.4l5-6c0,0,0.5-0.4,1,0l3,3"/>
+  <path stroke="#8E8E8E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M9.5,6.5C4.9,6.5,1,10.3,1,14.9	c0,4.7,3.9,8.5,8.5,8.5s8.3-3.7,8.3-8.5C17.8,10.3,14.1,6.5,9.5,6.5"/>
+  
+  <text class="txt_hand" fill="#606060" stroke="none" font-family="'Calibri'" font-weight="bold" x="5.095" y="19.227" font-size="13">H</text>
+  <text class="txt_auto" fill="#606060" stroke="none" font-family="'Calibri'" font-weight="bold" x="5.257" y="19.227" font-size="13">A</text>
+  
+</svg>

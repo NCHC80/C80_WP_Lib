@@ -1,0 +1,140 @@
+/* General styles */
+.TEXT {color: #000; white-space: nowrap; font-weight: normal;}
+.NAME {color: #000000; white-space: nowrap; font-weight: normal;}
+.PV {color: #000080; white-space: nowrap; font-weight: normal;}
+.OP {color: #000080; white-space: nowrap; font-weight: normal;}
+.SP {color: #005500; white-space: nowrap; font-weight: normal;}
+.CSP {color: #AA00AA; white-space: nowrap; font-weight: normal;}
+.PV1 {color: #000080; white-space: nowrap; font-weight: normal;}
+.PV2 {color: #000080; white-space: nowrap; font-weight: normal;}
+.PV3 {color: #000080; white-space: nowrap; font-weight: normal;}
+.PV4 {color: #000080; white-space: nowrap; font-weight: normal;}
+.PV5 {color: #000080; white-space: nowrap; font-weight: normal;}
+.PV6 {color: #000080; white-space: nowrap; font-weight: normal;}
+.PV7 {color: #000080; white-space: nowrap; font-weight: normal;}
+.PV8 {color: #000080; white-space: nowrap; font-weight: normal;}
+.PV9 {color: #000080; white-space: nowrap; font-weight: normal;}
+.PV10 {color: #000080; white-space: nowrap; font-weight: normal;}
+.CNT {color: #000080; white-space: nowrap; font-weight: normal;}
+.DT {color: #000080; white-space: nowrap; font-weight: normal;}
+.F {color: #000080; white-space: nowrap; font-weight: normal;}
+.U1 {color: #000080; white-space: nowrap; font-weight: normal;}
+.U2 {color: #000080; white-space: nowrap; font-weight: normal;}
+.U3 {color: #000080; white-space: nowrap; font-weight: normal;}
+.U12 {color: #000080; white-space: nowrap; font-weight: normal;}
+.U21 {color: #000080; white-space: nowrap; font-weight: normal;}
+.U23 {color: #000080; white-space: nowrap; font-weight: normal;}
+.U31 {color: #000080; white-space: nowrap; font-weight: normal;}
+.I1 {color: #000080; white-space: nowrap; font-weight: normal;}
+.I2 {color: #000080; white-space: nowrap; font-weight: normal;}
+.I3 {color: #000080; white-space: nowrap; font-weight: normal;}
+.COSFI {color: #000080; white-space: nowrap; font-weight: normal;}
+.Q {color: #000080; white-space: nowrap; font-weight: normal;}
+.P {color: #000080; white-space: nowrap; font-weight: normal;}
+.P1 {color: #000080; white-space: nowrap; font-weight: normal;}
+.P2 {color: #000080; white-space: nowrap; font-weight: normal;}
+.P3 {color: #000080; white-space: nowrap; font-weight: normal;}
+.E {color: #000080; white-space: nowrap; font-weight: normal;}
+.E1 {color: #000080; white-space: nowrap; font-weight: normal;}
+.E2 {color: #000080; white-space: nowrap; font-weight: normal;}
+.E3 {color: #000080; white-space: nowrap; font-weight: normal;}
+.ED {color: #000080; white-space: nowrap; font-weight: normal;}
+.EV {color: #000080; white-space: nowrap; font-weight: normal;}
+.EM {color: #000080; white-space: nowrap; font-weight: normal;}
+
+.CMD {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.CMD1 {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.CMD2 {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.V {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.V0 {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.V1 {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.V2 {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.V3 {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.V4 {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.V5 {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.V6 {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.V7 {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.V8 {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.V9 {color: #00FF00; white-space: nowrap; font-weight: normal;}
+.V10 {color: #00FF00; white-space: nowrap; font-weight: normal;}
+
+.ALARMTAG {color: #52CE61; white-space: nowrap; font-weight: normal; cursor:pointer;}
+.ALARMTAG.NONE {color: #52CE61;}
+.ALARMTAG.OK {color: #52CE61;}
+.ALARMTAG.OK_NACK {color: #AECC5D;}
+.ALARMTAG.ALARM {color: #FF9C4C;}
+.ALARMTAG.ALARM_NACK {color: #FF2626;}
+.ALARMTAG.BLOCKED {color: #F2EFC1;}
+
+/* Alarm-list */
+.datatable tr.OK_NACK .alStateImage,.datatable tr.OK_NACK .alStateImageText 
+{
+    background-image: url('/images/ico16/bullet_error.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+.datatable tr.OK .alStateImage,.datatable tr.OK .alStateImageText
+{
+    background-image: url('/images/ico16/bullet_green.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+.datatable tr.ALARM_NACK .alStateImage, .datatable tr.ALARM_NACK .alStateImageText 
+{
+    background-image: url('/images/ico16/bell_error.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+.datatable tr.ALARM .alStateImage, .datatable tr.ALARM .alStateImageText 
+{
+    background-image: url('/images/ico16/bell.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+.datatable tr.BLOCKED .alStateImage, .datatable tr.BLOCKED .alStateImageText 
+{
+    background-image: url('/images/ico16/bell_delete.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+.datatable tr.odd, .datatable tr.odd.a:link, .datatable tr.odd.a:visited { color: #000; border-bottom: 1px solid #fff; }
+.datatable tr.odd a:link, .datatable tr.odd a:visited { color: #000; }
+.datatable tr.odd.NONE {background-color: #F2F2F2 !important;}
+.datatable tr.odd.NONE td.sorting_1 {background-color: #D8D8D8 !important;}
+.datatable tr.odd.OK, .datatable tr.odd.ON {background-color: #6BB247 !important;}
+.datatable tr.odd.OK td.sorting_1, .datatable tr.odd.ON td.sorting_1 {background-color: #60AD34 !important;}
+.datatable tr.odd.OK_NACK {background-color: #B0CC66 !important;}
+.datatable tr.odd.OK_NACK td.sorting_1 {background-color: #ADCC51 !important;}
+.datatable tr.odd.ALARM {background-color: #FFBC66 !important;}
+.datatable tr.odd.ALARM td.sorting_1 {background-color: #FFAB4C !important;}
+.datatable tr.odd.ALARM_NACK {background-color: #FF5959 !important;}
+.datatable tr.odd.ALARM_NACK td.sorting_1 {background-color: #FF3F3F !important;}
+.datatable tr.odd.BLOCKED {background-color: #FFEBBF !important; color: #000;}
+.datatable tr.odd.BLOCKED td.sorting_1 {background-color: #FFE5A5 !important; color: #000;}
+.datatable tr.odd td img { vertical-align: bottom; }
+
+.datatable tr.even, .datatable tr.even.a:link, .datatable tr.even.a:visited { color: #000; border-bottom: 1px solid #fff;}
+.datatable tr.even a:link, .datatable tr.even a:visited { color: #000; }
+.datatable tr.even.NONE {background-color: #E5E5E5 !important;}
+.datatable tr.even.NONE td.sorting_1 {background-color: #CCCCCC !important;}
+.datatable tr.even.OK, .datatable tr.even.ON {background-color: #65AF3D !important;}
+.datatable tr.even.OK td.sorting_1, .datatable tr.even.ON td.sorting_1 {background-color: #59AA2A !important;}
+.datatable tr.even.OK_NACK {background-color: #AECC5B !important;}
+.datatable tr.even.OK_NACK td.sorting_1 {background-color: #AACC47 !important;}
+.datatable tr.even.ALARM {background-color: #FFB459 !important;}
+.datatable tr.even.ALARM td.sorting_1 {background-color: #FFA23F !important;}
+.datatable tr.even.ALARM_NACK {background-color: #FF4C4C !important;}
+.datatable tr.even.ALARM_NACK td.sorting_1 {background-color: #FF3232 !important;}
+.datatable tr.even.BLOCKED {background-color: #FFE8B2 !important; color: #000;}
+.datatable tr.even.BLOCKED td.sorting_1 {background-color: #FFE399 !important; color: #000;}
+.datatable tr.even td img { vertical-align: bottom; }
+
+.datatable tr.click:hover { opacity: 0.7 !important; cursor: pointer; }
+.datatable tr.clickable:hover { opacity: 0.7 !important; cursor: pointer; }
+
