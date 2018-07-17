@@ -1,0 +1,207 @@
+	
+	/* General *****************/
+	.fastighet-svg.r0 { -ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+	.fastighet-svg.r45 { -ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+	.fastighet-svg.r90 { -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); }
+	.fastighet-svg.r135 { -ms-transform: rotate(135deg); -webkit-transform: rotate(135deg); transform: rotate(135deg); }
+	.fastighet-svg.r180 { -ms-transform: rotate(180deg); -webkit-transform: rotate(180deg); transform: rotate(180deg); }
+	.fastighet-svg.r225 { -ms-transform: rotate(225deg); -webkit-transform: rotate(225deg); transform: rotate(225deg); }
+	.fastighet-svg.r270 { -ms-transform: rotate(270deg); -webkit-transform: rotate(270deg); transform: rotate(270deg); }	
+	.fastighet-svg.r315 { -ms-transform: rotate(315deg); -webkit-transform: rotate(315deg); transform: rotate(315deg); }	
+	
+	.fastighet-svg.off .ind { fill: #dedede; }
+	.fastighet-svg.off1 .ind { fill: #ff0000; }
+	.fastighet-svg.off .ind_al { fill: #dedede; }
+	.fastighet-svg.off .ind_on { fill: #dedede; }
+	.fastighet-svg.off1 .ind_on { fill: #ff0000; }
+
+	.fastighet-svg.on .ind { fill: #23d879; }
+	.fastighet-svg.on1 .ind { fill: #dedede; }
+	.fastighet-svg.on .ind_al { fill: #dedede; }
+	.fastighet-svg.on .ind_on { fill: #23d879; }
+
+	.fastighet-svg.fault .ind { fill: #ffff00; }
+	.fastighet-svg.fault .ind_al { fill: #ffff00; }
+
+	.fastighet-svg.al .ind { fill: #F22E2E; }
+	.fastighet-svg.al .ind_al { fill: #F22E2E; }
+	
+	.fastighet-svg .lager { visibility: hidden; }
+	.fastighet-svg.l1 #L1 { visibility: visible; }
+	.fastighet-svg.l2 #L2 { visibility: visible; }
+	.fastighet-svg.l3 #L3 { visibility: visible; }
+	.fastighet-svg.l4 #L4 { visibility: visible; }
+	.fastighet-svg.l5 #L5 { visibility: visible; }
+	.fastighet-svg.l6 #L6 { visibility: visible; }
+	.fastighet-svg.l7 #L7 { visibility: visible; }
+	.fastighet-svg.l8 #L8 { visibility: visible; }
+	.fastighet-svg.l9 #L9 { visibility: visible; }
+	.fastighet-svg.l10 #L10 { visibility: visible; }
+	
+	.fastighet-svg.on .rotate
+	{
+		-moz-animation   : moz-rotation 2.5s linear infinite; /* Older versions of Mozila */
+		-webkit-animation: webkit-rotation 2.5s linear infinite; /* Chrome, Opera, Safari */
+		animation: rotation 2.5s linear infinite;
+		transform-origin: 50% 50%;
+		display: inline-block;
+	}
+	
+	@-moz-keyframes moz-rotation {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+	@-webkit-keyframes webkit-rotation {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+	@keyframes rotation {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+
+	@-moz-keyframes moz-alarm {
+		0%        {fill: #ffffff}
+		100%       {fill: #F22E2E}
+	}
+	@-webkit-keyframes webkit-alarm {
+		0%        {fill: #ffffff}
+		100%       {fill: #F22E2E}
+	}
+	@keyframes alarm {
+		0%        {fill: #ffffff}
+		100%       {fill: #F22E2E}
+	}
+
+	.fastighet-svg.al .ind {
+		-moz-animation   : moz-alarm 2.5s ease infinite; /* Older versions of Mozila */
+		-webkit-animation: webkit-alarm 2.5s ease infinite; /* Chrome, Opera, Safari */
+		animation: alarm 2.5s ease infinite;
+	}
+	
+	.fastighet-svg.al .ind_al {
+		-moz-animation   : moz-alarm 2.5s ease infinite; /* Older versions of Mozila */
+		-webkit-animation: webkit-alarm 2.5s ease infinite; /* Chrome, Opera, Safari */
+		animation: alarm 2.5s ease infinite;
+	}
+
+	/* Converter *****************/
+	
+	/* Cool / Heat / HeatCool *****************/
+	.fastighet-svg.Converter.off .ind_heat { fill: #dedede; }
+	.fastighet-svg.Converter.off .ind_cool { fill: #dedede; }
+	.fastighet-svg.Converter.off .ind_room { fill: #dedede; }
+	.fastighet-svg.Converter.heat .ind_heat { fill: #FF9647; }
+	.fastighet-svg.Converter.cool .ind_cool { fill: #1687FF; }
+	.fastighet-svg.Converter.room .ind_room { fill: #23d879; }
+	
+	/* Damper *****************/
+	.fastighet-svg.Damper .damper_closed {visibility: visible; }
+	.fastighet-svg.Damper .damper_half {visibility: hidden; }
+	.fastighet-svg.Damper .damper_open {visibility: hidden;}
+	
+	.fastighet-svg.Damper.closed .damper_closed {visibility: visible; }
+	.fastighet-svg.Damper.closed .damper_half {visibility: hidden; }
+	.fastighet-svg.Damper.closed .damper_open {visibility: hidden;}
+	
+	.fastighet-svg.Damper.half .damper_closed {visibility: hidden; }
+	.fastighet-svg.Damper.half .damper_half {visibility: visible; }
+	.fastighet-svg.Damper.half .damper_open {visibility: hidden;}
+	
+	.fastighet-svg.Damper.open .damper_closed {visibility: hidden; }
+	.fastighet-svg.Damper.open .damper_half {visibility: hidden; }
+	.fastighet-svg.Damper.open .damper_open {visibility: visible;}
+	
+	/* DamperSmall *****************/
+	.fastighet-svg.DamperSmall.closed .damper { -webkit-transform-origin: 7.1px 26.95px; -moz-transform-origin: 7.1px 26.95px; transform-origin: 7.1px 26.95px; -ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+	.fastighet-svg.DamperSmall.half .damper { -webkit-transform-origin: 7.1px 26.95px; -moz-transform-origin: 7.1px 26.95px; transform-origin: 7.1px 26.95px; -ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+	.fastighet-svg.DamperSmall.open .damper { -webkit-transform-origin: 7.1px 26.95px; -moz-transform-origin: 7.1px 26.95px; transform-origin: 7.1px 26.95px; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); }
+
+	
+	/* ExchangeR *****************/
+	
+	/* Expansion *****************/
+	
+	/* Fan *****************/
+	
+	/* Filter *****************/
+	
+	/* H0A *****************/
+	.fastighet-svg.H0A .txt_hand { visibility: hidden; }
+	.fastighet-svg.H0A .txt_auto { visibility: hidden; }
+	.fastighet-svg.H0A.hand .txt_hand { visibility: visible; }
+	.fastighet-svg.H0A.auto .txt_auto { visibility: visible; }
+	
+	
+	/* Hand *****************/
+		@-moz-keyframes moz-hand-on {
+		0%        {opacity: 0;}
+		25%       {opacity: 1;}
+		75%       {opacity: 1;}
+		100%       {opacity: 0;}
+	}
+	@-webkit-keyframes webkit-hand-on {
+		0%        {opacity: 0;}
+		25%       {opacity: 1;}
+		75%       {opacity: 1;}
+		100%       {opacity: 0;}
+	}
+	@keyframes hand-on {
+		0%        {opacity: 0;}
+		25%       {opacity: 1;}
+		75%       {opacity: 1;}
+		100%       {opacity: 0;}
+	}
+
+	.fastighet-svg.Hand .ind {
+		-moz-animation   : moz-hand-on 2.5s ease infinite; /* Older versions of Mozila */
+		-webkit-animation: webkit-hand-on 2.5s ease infinite; /* Chrome, Opera, Safari */
+		animation: hand-on 2.5s ease infinite;
+	}
+	
+	/* Indication *****************/
+	
+	/* Manometer *****************/
+	
+	/* ManometerSmall *****************/
+	
+	/* Meter *****************/
+	
+	/* Pump *****************/
+	
+	/* PumpSmall *****************/
+	
+	/* Room *****************/
+	.fastighet-svg.Room.off .ind { fill: #dedede; stroke:#333333; stroke-width:1 }
+	.fastighet-svg.Room.off .ind_heat { stroke-opacity: 0; }
+	.fastighet-svg.Room.off .ind_cool { stroke-opacity: 0; }
+	.fastighet-svg.Room.heat .ind_heat { stroke-opacity: 1; stroke:#c43535; }
+	.fastighet-svg.Room.heat .ind_cool { stroke-opacity: 1; stroke:#c43535; }
+	.fastighet-svg.Room.heat .ind { fill: #dedede; }
+	.fastighet-svg.Room.cool .ind_heat { stroke-opacity: 0; stroke:#dedede; }
+	.fastighet-svg.Room.cool .ind_cool { stroke-opacity: 1; stroke:#0000ff; }
+	.fastighet-svg.Room.cool .ind { fill: #dedede; }
+	.fastighet-svg.Room.room .ind { stroke: #23d879; stroke-width:3; }
+	.fastighet-svg.Room.al .ind { fill: #c43535; }
+	.fastighet-svg.Room.al .ind_heat { stroke:#000000; }
+	.fastighet-svg.Room.al .ind_cool { stroke:#000000; }
+	
+
+	/* Sensor *****************/
+	
+	/* SensorOut *****************/
+	
+	/* SensorRoom *****************/
+	
+	/* Valve *****************/
+	.fastighet-svg.Valve.off  .cmd { fill:#dedede }
+	.fastighet-svg.Valve.cmd  .cmd { fill:#23d879 }
+	.fastighet-svg.Valve.fault .cmd { fill: #ffff00; }
+	.fastighet-svg.Valve.al .cmd { fill: #F22E2E; }
+	
+	/* Valve3w *****************/
+	
+	/* DamperPressure *****************/
+	.fastighet-svg.DamperPressure.closed .damper { -webkit-transform-origin: 27.880px 55.250px; -moz-transform-origin: 27.880px 55.250px; transform-origin: 27.880px 55.250px; -ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+	.fastighet-svg.DamperPressure.half .damper { -webkit-transform-origin: 27.880px 55.250px; -moz-transform-origin: 27.880px 55.250px; transform-origin: 27.880px 55.250px; -ms-transform: rotate(45deg); -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+	.fastighet-svg.DamperPressure.open .damper { -webkit-transform-origin: 27.880px 55.250px; -moz-transform-origin: 27.880px 55.250px; transform-origin: 27.880px 55.250px; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); }

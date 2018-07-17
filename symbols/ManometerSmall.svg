@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   width="9"
+   height="16"
+      style="fill:#dedede;stroke:#999999;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1">
+  <path
+     d="m 4.6071432,0.70359324 c -2.1,0 -3.75000032,1.64999996 -3.75000032,3.59999976 0,2.1 1.65000032,3.75 3.75000032,3.75 1.95,0 3.6,-1.65 3.6,-3.75 0,-1.9499998 -1.65,-3.59999976 -3.6,-3.59999976"
+	 class="ind"/>
+  <path
+     d="m 4.6071432,8.053593 0,7.35" />
+  <path
+     d="m 6.1071432,6.253593 -3,-3.5999998 0,1.4999998" />
+  <path
+     d="m 3.1071432,2.6535932 1.5,0"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg"  width="24" height="48">
+  
+  <path class="ind_al" fill="#DDDDDC" d="M0.8,2.4v43c0,1,0.8,1.8,1.8,1.8h18.9c1,0,1.8-0.8,1.8-1.8v-43c0-1-0.8-1.8-1.8-1.8H2.6	C1.6,0.6,0.8,1.4,0.8,2.4z"/>
+  <path stroke="#8E8E8E" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M0.8,2.5v43c0,1,0.8,1.8,1.8,1.8h18.9	c1,0,1.8-0.8,1.8-1.8v-43c0-1-0.8-1.8-1.8-1.8H2.6C1.6,0.8,0.8,1.5,0.8,2.5z"/>
+  
+  <circle class="ind_heat" fill="#FFF" cx="12" cy="13.9" r="6.9"/>
+    
+  <path stroke="#C43535" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M8.7,13.9h6.6"/>
+  
+  <circle class="ind_cool" fill="#FFF" cx="12" cy="34.9" r="6.9"/>
+  <circle stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" fill="none" cx="12" cy="13.9" r="6.9"/>
+  
+  <path stroke="#C43535" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M12,10.6v6.6"/>
+  <path stroke="#007ABE" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M8.7,34.9h6.6"/>
+  
+  <circle stroke="#757575" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" fill="none" cx="12" cy="34.9" r="6.9"/>
+  
+</svg>
